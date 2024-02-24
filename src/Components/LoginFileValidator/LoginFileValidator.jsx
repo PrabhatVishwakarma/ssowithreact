@@ -74,10 +74,7 @@ const LoginFileValidator = () => {
         <button type="submit" className="login-button">Log in</button>
       </form>
       <MicrosoftLoginButton/>
-      <div className="footer-copyright">
-      Copyright by 8-Bit Coders
-      {/* <img src="https://see.fontimg.com/api/renderfont4/1GX3Z/eyJyIjoiZnMiLCJoIjo0OCwidyI6MTI1MCwiZnMiOjM4LCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzM1M0Q0QiIsInQiOjF9/Q29weXJpZ2h0QnkgOiA4LUJpdCBDb2Rlcg/adulsa-script.png" alt="" srcset="" /> */}
-    </div>
+
     </div>
 
   );

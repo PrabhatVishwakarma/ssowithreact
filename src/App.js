@@ -1,34 +1,33 @@
 import React from "react";
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal, MsalProvider } from "@azure/msal-react";
+import { AuthenticatedTemplate, UnauthenticatedTemplate,  MsalProvider } from "@azure/msal-react";
 import Navbar from "./Components/NavBar";
 import LoginFileValidator from "./Components/LoginFileValidator/LoginFileValidator";
-import styles from './App.module.css';
+import './App.css';
+import FileUpload from "./Components/FileUpload/FileUpload";
 
-const WrappedView = () =>{
-  const { instance } = useMsal();
-  const activeAccount = instance.getActiveAccount();
+const WrappedView = () => {
+ 
 
   return (
-    <div className={styles.App}>
-    <Navbar />
-    <AuthenticatedTemplate>
-    {activeAccount ? (
-      <h5>
-      Welcome back {activeAccount.username}!
-      </h5>
-      ) :null}
-    </AuthenticatedTemplate>
-    <UnauthenticatedTemplate>
-    <LoginFileValidator />
-    </UnauthenticatedTemplate>
+    <div className="App">
+      <Navbar />
+      <AuthenticatedTemplate>
+        <FileUpload />
+      </AuthenticatedTemplate>
+      <UnauthenticatedTemplate>
+        <LoginFileValidator />
+      </UnauthenticatedTemplate>
+      <div className="footer-copyright">
+        Copyright by 8-Bit Coders
+      </div>
     </div>
   );
 };
 
-const App =  ({instance}) => {
+const App = ({ instance }) => {
   return (
-    <MsalProvider instance = {instance}>
-      <WrappedView/>
+    <MsalProvider instance={instance}>
+      <WrappedView />
     </MsalProvider>
   );
 };

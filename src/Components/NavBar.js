@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -10,7 +9,12 @@ const Navbar = () => {
       <div className="navbar-heading">
         <img src="https://see.fontimg.com/api/renderfont4/1GX3Z/eyJyIjoiZnMiLCJoIjo2MSwidyI6MTI1MCwiZnMiOjQ5LCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzQzMjcyNyIsInQiOjF9/RmlsZSBWYWxpZGF0b3I/adulsa-script.png" alt="Heading" />
       </div>
-      <h1 className="navbar-SemiColons">SemiColons@2024 </h1>
+      <div className="navbar-SemiColons">
+        SemiColons@2024
+      </div>
+      <div className="profile-picture">
+        <img src="path_to_your_profile_picture" alt="Profile" />
+      </div>
     </nav>
   );
 };
