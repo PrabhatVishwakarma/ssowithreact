@@ -1,20 +1,31 @@
 import React from "react";
+import "../common.css"; // Importing common styles
+
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const navbarStyle = {
+    height: '60px', 
+    display: 'flex',
+    alignItems: 'center', 
+    padding: '0 20px', 
+  };
+
+  const location = useLocation();
   return (
-    <nav className="navbar">
+    <nav className="navbar" style={navbarStyle}>
       <div className="navbar-logo">
         <img src="https://careers.persistent.com/logo-dark_257ecddf.5ded858effe2e0f0.svg" alt="Logo" />
       </div>
       <div className="navbar-heading">
-        <img src="https://see.fontimg.com/api/renderfont4/1GX3Z/eyJyIjoiZnMiLCJoIjo2MSwidyI6MTI1MCwiZnMiOjQ5LCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzQzMjcyNyIsInQiOjF9/RmlsZSBWYWxpZGF0b3I/adulsa-script.png" alt="Heading" />
+        <h1>AI Chatbot</h1>
       </div>
-      <div className="navbar-SemiColons">
-        SemiColons@2024
-      </div>
-      <div className="profile-picture">
-        <img src="path_to_your_profile_picture" alt="Profile" />
-      </div>
+      <div className="navbar-SemiColons">SemiColons@2025</div>
+      {location.pathname !== "/login" && location.pathname !== "/register" && (
+        <div className="profile-picture" style={{ marginLeft: '20px' }}>
+          <img src="path_to_your_profile_picture" alt="Profile" />
+        </div>
+      )}
     </nav>
   );
 };

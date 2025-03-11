@@ -1,24 +1,21 @@
 import React from "react";
-import { AuthenticatedTemplate, UnauthenticatedTemplate,  MsalProvider } from "@azure/msal-react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthenticatedTemplate, UnauthenticatedTemplate, MsalProvider } from "@azure/msal-react";
 import Navbar from "./Components/NavBar";
-import LoginFileValidator from "./Components/LoginFileValidator/LoginFileValidator";
-import './App.css';
-import FileUpload from "./Components/FileUpload/FileUpload";
+import AiChatBotLoginPage from "./Components/AiChatBotLoginPage/AiChatBotLoginPage";
+import RegisterPage from "./Components/Register/AiChatBotUserRegister"; // Import RegisterPage
+import "./App.css";
 
 const WrappedView = () => {
- 
-
   return (
     <div className="App">
-      <Navbar />
       <AuthenticatedTemplate>
-        <FileUpload />
       </AuthenticatedTemplate>
       <UnauthenticatedTemplate>
-        <LoginFileValidator />
+        <AiChatBotLoginPage />
       </UnauthenticatedTemplate>
       <div className="footer-copyright">
-        Copyright by 8-Bit Coders
+        Copyright by Spartans Code Ninjas
       </div>
     </div>
   );
@@ -27,7 +24,15 @@ const WrappedView = () => {
 const App = ({ instance }) => {
   return (
     <MsalProvider instance={instance}>
-      <WrappedView />
+      <Router>
+        <Navbar />  {}
+        <Routes>
+          <Route path="/" element={<WrappedView />} />
+          <Route path="/login" element={<AiChatBotLoginPage />} />
+
+          <Route path="/register" element={<RegisterPage />} /> {}
+        </Routes>
+      </Router>
     </MsalProvider>
   );
 };

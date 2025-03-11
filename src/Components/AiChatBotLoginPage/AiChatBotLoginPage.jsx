@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import video from '../Assets/formBackgroundVIdeo.mp4';
-import "./LoginFileValidator.css";
-import MicrosoftLoginButton from "../MicrosoftLoginButton"; // Update this line
+import "./AiChatBotLoginPage.css";
+import MicrosoftLoginButton from "../MicrosoftLoginButton";
+import { Link } from "react-router-dom";
 
 
-const LoginFileValidator = () => {
+const AiChatBotLoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -40,8 +41,11 @@ const LoginFileValidator = () => {
   };
 
   return (
+
+    
     <div className="login-file-validator">
       <form onSubmit={handleSubmit} className="login-form">
+      <h2 className="login-title">AI Chatbot Login</h2>
         <div className="background-video-container">
           <video autoPlay muted loop className="background-video">
             <source src={video} type="video/mp4" />
@@ -68,16 +72,18 @@ const LoginFileValidator = () => {
           className="login-input"
         />
         {errors.password && <p className="login-error">{errors.password}</p>}
-        {/* <div className="forgot-password">
-    <a href="#">Forgot password?</a>
-  </div> */}
+        
         <button type="submit" className="login-button">Log in</button>
       </form>
       <MicrosoftLoginButton/>
-
+<div>
+  <p className="login-link">
+  Don't have an account? <Link to="/register">Register here</Link>
+</p>
+</div>
     </div>
 
   );
 };
 
-export default LoginFileValidator;
+export default AiChatBotLoginPage;
