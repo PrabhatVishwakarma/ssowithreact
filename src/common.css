@@ -1,22 +1,15 @@
 /* Common styles for the application */
 
 .navbar {
-    height: 60px; /* Set a standard height for the navbar */
-
-    display: flex;
-    align-items: center; /* Center items vertically */
-    padding: 0 20px; /* Add horizontal padding */
-}
+    height: 60px; /* Set a standard height for the navbar */}
 
 .navbar-logo img {
     height: 40px; /* Adjust logo height if needed */
-
 }
 
 .navbar-heading h1 {
     margin: 0; /* Remove default margin */
     font-size: 24px; /* Set font size for the heading */
-
 }
 
 .navbar-SemiColons {

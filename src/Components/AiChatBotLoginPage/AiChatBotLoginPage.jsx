@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import video from '../Assets/formBackgroundVIdeo.mp4';
-import "./AiChatBotLoginPage.css";
 import MicrosoftLoginButton from "../MicrosoftLoginButton";
 import { Link } from "react-router-dom";
 
@@ -58,10 +57,8 @@ const AiChatBotLoginPage = () => {
           value={username}
           onChange={handleUsernameChange}
           required
-          className="login-input"
-        />
+          className="login-input"/>
         {errors.username && <p className="login-error">{errors.username}</p>}
-
         <label htmlFor="password" className="login-label">Password:</label>
         <input
           type="password"
@@ -69,20 +66,15 @@ const AiChatBotLoginPage = () => {
           value={password}
           onChange={handlePasswordChange}
           required
-          className="login-input"
-        />
+          className="login-input"/>
         {errors.password && <p className="login-error">{errors.password}</p>}
-        
         <button type="submit" className="login-button">Log in</button>
-      </form>
+        <div>
+            <p className="login-link">Don't have an account? <Link to="/register">Register here</Link></p>
+        </div>
+        </form>
       <MicrosoftLoginButton/>
-<div>
-  <p className="login-link">
-  Don't have an account? <Link to="/register">Register here</Link>
-</p>
-</div>
     </div>
-
   );
 };
 

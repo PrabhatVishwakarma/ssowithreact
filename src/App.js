@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthenticatedTemplate, UnauthenticatedTemplate, MsalProvider } from "@azure/msal-react";
+
 import Navbar from "./Components/NavBar";
 import AiChatBotLoginPage from "./Components/AiChatBotLoginPage/AiChatBotLoginPage";
 import RegisterPage from "./Components/Register/AiChatBotUserRegister"; // Import RegisterPage
@@ -29,7 +30,6 @@ const App = ({ instance }) => {
         <Routes>
           <Route path="/" element={<WrappedView />} />
           <Route path="/login" element={<AiChatBotLoginPage />} />
-
           <Route path="/register" element={<RegisterPage />} /> {}
         </Routes>
       </Router>
